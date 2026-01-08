@@ -1,0 +1,81 @@
+냉짱고
+오후 7:54 01-08 목요일
+
+---
+user
+
+uuid		id		PK
+이름		user_name
+폰번호		phone_number				
+생성일		created_at
+수정일		updated_at
+
+---
+user_like_recipe
+
+uuid		id		PK
+user_id		user_id		FK
+recipe_id		recipe_id		FK
+생성일		created_at
+수정일		updated_at
+
+---
+food
+
+uuid		id		PK
+이름		food_name
+종류		type
+생성일		created_at
+수정일		updated_at
+
+---
+user_ref
+
+uuid		id		PK
+음식		food_name	FK
+유저		user		FK
+갯수		count
+소비기한		expiration_date
+생성일		created_at
+수정일		updated_at
+
+---
+recipe
+
+uuid		id		PK
+재료		food_id		FK
+이름		recipe_name
+영상경로		yutube_url
+생성일		created_at
+수정일		updated_at
+
+---
+shopping_cart
+
+uuid		id		PK
+유저		user_id		FK
+음식		food_id		FK
+생성일		created_at
+수정일		updated_at
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
