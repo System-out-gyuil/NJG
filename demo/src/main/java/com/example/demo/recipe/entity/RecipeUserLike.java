@@ -1,8 +1,8 @@
-package com.example.demo.entity;
+package com.example.demo.recipe.entity;
 
+import com.example.demo.user.entity.User;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
@@ -16,20 +16,12 @@ import java.time.LocalDateTime;
 @Setter
 @NoArgsConstructor
 @EntityListeners(AuditingEntityListener.class)
-@Table(name = "users")
-public class User {
-    
+@Table(name = "recipe_user_like")
+public class RecipeUserLike {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
-    @Column(nullable = false)
-    private String name;
-    
-    @Column(nullable = false, unique = true)
-    private String email;
-
-    private String phone_number;
 
     @CreatedDate
     @Column(updatable = false)
@@ -38,5 +30,12 @@ public class User {
     @LastModifiedDate
     private LocalDateTime updatedAt;
 
-}
+    @ManyToOne
+//    name: 현재 테이블에서 표시될 컬럼명, ref: 목표 테이블의 pk명
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    User user;
 
+    @ManyToOne
+    @JoinColumn(name = "recipe_id", referencedColumnName = "id")
+    Recipe recipe;
+}

@@ -24,7 +24,7 @@ food
 
 uuid		id		PK
 이름		food_name
-종류		type
+종류		food_type
 생성일		created_at
 수정일		updated_at
 
@@ -35,19 +35,29 @@ uuid		id		PK
 음식		food_name	FK
 유저		user		FK
 갯수		count
-소비기한		expiration_date
+소비기한		expiration_date(exp_date)
 생성일		created_at
 수정일		updated_at
 
 ---
-recipe
+recipes
 
 uuid		id		PK
 재료		food_id		FK
 이름		recipe_name
-영상경로		yutube_url
+영상경로		youtube_url
 생성일		created_at
 수정일		updated_at
+
+---
+recipe_foods
+
+uuid		id		PK
+레시피		recipe_id		FK
+재료		food_id		FK
+수량(용량)	quantiy		(ex: 3,  200, 2)
+단위		unit		(ex: 개, ml, 큰술)
+
 
 ---
 shopping_cart
