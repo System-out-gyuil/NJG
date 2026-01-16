@@ -44,5 +44,14 @@ public class UserService {
     public void deleteUser(Long id) {
         userRepository.deleteById(id);
     }
+    
+    // Login
+    public Optional<User> login(String email, String password) {
+        Optional<User> user = userRepository.findByEmail(email);
+        if (user.isPresent() && user.get().getPassword() != null && user.get().getPassword().equals(password)) {
+            return user;
+        }
+        return Optional.empty();
+    }
 }
 

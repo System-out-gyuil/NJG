@@ -2,7 +2,6 @@ package com.example.demo.user.entity;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
@@ -30,6 +29,8 @@ public class User {
     private String email;
 
     private String phone_number;
+
+    private String password;
 
     @CreatedDate
     @Column(updatable = false)

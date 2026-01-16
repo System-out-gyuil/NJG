@@ -34,7 +34,8 @@ user_ref
 uuid		id		PK
 음식		food_name	FK
 유저		user		FK
-갯수		count
+수량(용량)	quantiy		(ex: 3,  200, 2)
+단위		unit		(ex: 개, ml, 큰술)
 소비기한		expiration_date(exp_date)
 생성일		created_at
 수정일		updated_at

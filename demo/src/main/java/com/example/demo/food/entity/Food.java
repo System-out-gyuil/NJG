@@ -20,9 +20,11 @@ public class Food {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String food_name;
+    @Column(name = "food_name")
+    private String foodName;
 
-    private String food_type;
+    @Column(name = "food_type")
+    private String foodType;
 
     @CreatedDate
     @Column(updatable = false)

@@ -24,7 +24,9 @@ public class UserRef {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private int count;
+    private int quantity;
+
+    private String unit;
 
     private String exp_date;
 
