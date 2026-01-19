@@ -26,6 +26,9 @@ public class Food {
     @Column(name = "food_type")
     private String foodType;
 
+    @Column(name = "food_image_url")
+    private String foodImageUrl;
+
     @CreatedDate
     @Column(updatable = false)
     private LocalDateTime createdAt;

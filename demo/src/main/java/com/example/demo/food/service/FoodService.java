@@ -41,6 +41,7 @@ public class FoodService {
         
         food.setFoodName(foodDetails.getFoodName());
         food.setFoodType(foodDetails.getFoodType());
+        food.setFoodImageUrl(foodDetails.getFoodImageUrl());
         
         return foodRepository.save(food);
     }
